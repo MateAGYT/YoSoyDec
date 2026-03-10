@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Dec - Web Oficial</title>
+    <meta name="title" content="Dec - Web Oficial" />
+    <meta name="description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música y todo el tema ..." />
+    <meta name="theme-color" content="#13CF8D">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yosoydec.com/" />
+    <meta property="og:title" content="Dec - Web Oficial" />
+    <meta property="og:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música y todo el tema ..." />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://yosoydec.com/" />
+    <meta property="twitter:title" content="Dec - Web Oficial" />
+    <meta property="twitter:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música y todo el tema ..." />
+    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <link rel="icon" href="/assets/img/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <div class="main-container" id="widget">
+        <button class="expand-btn" onclick="toggleExpand()" title="Expandir">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </button>
+
+        <nav class="tabs">
+            <button class="tab-btn active" onclick="showTab('about')">Sobre mí</button>
+            <button class="tab-btn" onclick="showTab('services')">Servicios</button>
+            <button class="tab-btn" onclick="showTab('contact')">Contratar o contacto</button>
+        </nav>
+
+        <div id="about" class="content-section active">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img src="/assets/img/logo.png" alt="Logo">
+                </div>
+                <h1>Dec / David</h1>
+                <p class="subtitle">Músico profesional y diseñador</p>
+            </div>
+            <div class="bio">
+                <p>Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música y todo el tema relacionado con la gestión de comunidades y con la música.</p>
+            </div>
+        </div>
+
+        <div id="services" class="content-section">
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Música</h3>
+                    <p>Composición de canciones y escritura de letras.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Diseño</h3>
+                    <p>Logotipos y relacionados.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vídeo</h3>
+                    <p>Edición profesional de video y audio.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Comunidad</h3>
+                    <p>Gestión, organización y testing de grupos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact" class="content-section">
+            <div class="social-links">
+                <a href="mailto:dec@yosoydec.com" class="social-btn">Email</a>
+                <a href="https://discord.com/users/1016621842229887086" class="social-btn">Discord</a>
+                <!-- <a href="#" class="social-btn">Email</a> -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function toggleExpand() {
+            document.getElementById('widget').classList.toggle('expanded');
+        }
+    </script>
+</body>
+</html>
