@@ -9,10 +9,10 @@ body {
     background-color: #000;
     color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .bg-gradient {
@@ -25,54 +25,50 @@ body {
     z-index: -1;
 }
 
+.site-header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header-nav {
+    display: flex;
+    gap: 30px;
+}
+
+.header-nav a {
+    color: #888;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.header-nav a:hover {
+    color: #fff;
+}
+
 .main-container {
     width: 100vw;
     height: 100vh;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0;
-    padding: 24px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    padding: 80px 24px 24px 24px;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.expand-btn {
-    display: none;
-}
-
 .tabs {
-    display: flex;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 5px;
-    border-radius: 12px;
-    margin-bottom: 24px;
-    width: 100%;
-    max-width: 500px;
-}
-
-.tab-btn {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: #888;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: 0.2s;
-}
-
-.tab-btn.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    display: none;
 }
 
 .content-section {
@@ -85,10 +81,6 @@ body {
 
 .content-section.active {
     display: block;
-}
-
-.expanded .content-section {
-    flex: 1;
 }
 
 @keyframes fadeIn {
@@ -135,10 +127,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-}
-
-.expanded .services-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .service-card {
