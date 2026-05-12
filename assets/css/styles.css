@@ -89,7 +89,7 @@ body {
     display: none;
     animation: fadeIn 0.4s ease forwards;
     width: 100%;
-    max-width: 800px;
+    max-width: 850px; /* Aumentado un poco para el diseño horizontal */
     padding: 20px;
 }
 
@@ -102,18 +102,24 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* MODIFICADO: Alineación horizontal */
 .profile-header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
     margin-bottom: 30px;
 }
 
+/* MODIFICADO: Imagen más grande y circular */
 .avatar-container {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto 20px;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+    margin: 0;
     border-radius: 50%;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .avatar-container img {
@@ -123,23 +129,39 @@ body {
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 600;
 }
 
 .subtitle {
-    color: #666;
-    font-size: 14px;
+    color: #13CF8D; /* Usando tu color de marca */
+    font-size: 16px;
     margin-top: 5px;
 }
 
+/* MODIFICADO: Bio alineada a la izquierda */
 .bio {
     color: #999;
     font-size: 16px;
     line-height: 1.8;
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+    text-align: left;
+    max-width: 100%;
+    margin-top: 15px;
+}
+
+/* RESPONSIVO: En móviles vuelve a estar centrado */
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bio {
+        text-align: center;
+    }
+    .avatar-container {
+        width: 130px;
+        height: 130px;
+    }
 }
 
 .services-grid {
