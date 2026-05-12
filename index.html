@@ -1,89 +1,430 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Dec - Web Oficial</title>
-    <meta name="title" content="Dec - Web Oficial" />
-    <meta name="description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia en la música y actualmente 2 como diseñador gráfico. Me encanta la música, los animales y hacer amigos ..." />
-    <meta name="theme-color" content="#13CF8D">
+<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YoSoyDec - Inicio</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&amp;family=Source+Sans+3:wght@300;400;600&amp;display=swap" rel="stylesheet">
+  <title>YoSoyDec - Inicio</title>
+  <meta name="title" content="YoSoyDec - Inicio" />
+  <meta name="description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. ..." />
+  <meta name="theme-color" content="#95F527">
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yosoydec.com/" />
-    <meta property="og:title" content="Dec - Web Oficial" />
-    <meta property="og:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música, los animales y hacer amigos ..." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yosoydec.com" />
+  <meta property="og:title" content="YoSoyDec - Inicio" />
+  <meta property="og:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. ..." />
 
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://yosoydec.com/" />
-    <meta property="twitter:title" content="Dec - Web Oficial" />
-    <meta property="twitter:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música, los animales y hacer amigos ..." />
-    <link rel="icon" href="/assets/img/logo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-<body>
-    <div class="bg-gradient"></div>
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://yosoydec.com" />
+  <meta property="twitter:title" content="YoSoyDec - Inicio" />
+  <meta property="twitter:description" content="Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. ..." />
+  
+  <style>
+    html, body { height: 100%; margin: 0; }
+    * { box-sizing: border-box; }
 
-    <header class="navline">
-        <div class="nav-content">
-            <div class="nav-logo">Dec</div>
-            <nav class="nav-menu">
-                <a href="#" onclick="showTab('about')">Sobre mí</a>
-                <a href="#" onclick="showTab('services')">Servicios</a>
-                <a href="#" onclick="showTab('contact')">Contacto</a>
-            </nav>
-        </div>
-    </header>
-    
-    <div class="main-container" id="widget">
-        <div id="about" class="content-section active">
-            <div class="profile-header">
-                <div class="avatar-container">
-                    <img src="/assets/img/logo.png" alt="Logo">
-                </div>
-                
-                <div class="profile-info-wrapper">
-                    <h1>Dec / David</h1>
-                    <p class="subtitle">Músico profesional y diseñador</p>
-                    <div class="bio">
-                        <p>Me llamo Dec, soy un músico profesional y gestor de comunidades, entre otros. Tengo más de 8 años de experiencia y actualmente 2 como diseñador gráfico. Me encanta la música y todo el tema relacionado con la gestión de comunidades y con la música.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    .app-root {
+      font-family: 'Source Sans 3', sans-serif;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
 
-        <div id="services" class="content-section">
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Música</h3>
-                    <p>Composición de canciones y escritura de letras.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Diseño</h3>
-                    <p>Logotipos y relacionados.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Vídeo</h3>
-                    <p>Edición profesional de video y audio.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Comunidad</h3>
-                    <p>Gestión, organización y testing de grupos.</p>
-                </div>
-            </div>
-        </div>
+    .font-heading { font-family: 'Oswald', sans-serif; }
 
-        <div id="contact" class="content-section">
-            <div class="social-links">
-                <a href="mailto:dec@yosoydec.com" class="social-btn">Email</a>
-                <a href="https://discord.com/users/1016621842229887086" class="social-btn" target="_blank">Discord</a>
-            </div>
-        </div>
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 40%, #16213e 70%, #0a0a0a 100%);
+      position: relative;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(232, 93, 4, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(4, 136, 232, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background: rgba(232, 150, 4, 0.4);
+      animation: float-up linear infinite;
+    }
+    @keyframes float-up {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-500px) scale(0); opacity: 0; }
+    }
+
+    .glow-btn {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .glow-btn::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.1), transparent 30%);
+      animation: btn-spin 3s linear infinite;
+    }
+    @keyframes btn-spin {
+      to { transform: rotate(360deg); }
+    }
+    .glow-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(232, 93, 4, 0.4);
+    }
+
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .stat-item { animation: fade-in 0.6s ease both; }
+    .stat-item:nth-child(1) { animation-delay: 0.1s; }
+    .stat-item:nth-child(2) { animation-delay: 0.25s; }
+    .stat-item:nth-child(3) { animation-delay: 0.4s; }
+    .stat-item:nth-child(4) { animation-delay: 0.55s; }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .nav-glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(10, 10, 10, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .city-silhouette {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      opacity: 0.08;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent 0px, transparent 20px,
+        #e85d04 20px, #e85d04 22px,
+        transparent 22px, transparent 40px
+      );
+      mask-image: polygon(0% 100%, 3% 60%, 5% 70%, 8% 40%, 10% 50%, 13% 30%, 16% 45%, 19% 20%, 22% 55%, 25% 35%, 28% 50%, 31% 25%, 34% 60%, 37% 40%, 40% 55%, 43% 30%, 46% 50%, 49% 20%, 52% 45%, 55% 60%, 58% 35%, 61% 50%, 64% 25%, 67% 55%, 70% 40%, 73% 30%, 76% 55%, 79% 45%, 82% 60%, 85% 35%, 88% 50%, 91% 40%, 94% 55%, 97% 45%, 100% 100%);
+      -webkit-mask-image: polygon(0% 100%, 3% 60%, 5% 70%, 8% 40%, 10% 50%, 13% 30%, 16% 45%, 19% 20%, 22% 55%, 25% 35%, 28% 50%, 31% 25%, 34% 60%, 37% 40%, 40% 55%, 43% 30%, 46% 50%, 49% 20%, 52% 45%, 55% 60%, 58% 35%, 61% 50%, 64% 25%, 67% 55%, 70% 40%, 73% 30%, 76% 55%, 79% 45%, 82% 60%, 85% 35%, 88% 50%, 91% 40%, 94% 55%, 97% 45%, 100% 100%);
+    }
+
+    .section-dark { background: #0d0d0d; }
+    .section-darker { background: #080808; }
+
+    .app-root::-webkit-scrollbar { width: 6px; }
+    .app-root::-webkit-scrollbar-track { background: #0a0a0a; }
+    .app-root::-webkit-scrollbar-thumb { background: #e85d04; border-radius: 3px; }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div class="app-root w-full" id="app">
+   <nav class="nav-glass fixed top-0 left-0 w-full z-50 px-4 py-3">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-lg flex items-center justify-center" id="logo-box" style="background: #e85d04;"><span class="font-heading text-white font-bold text-lg">M</span>
+      </div><span class="font-heading text-xl font-semibold tracking-wide" id="nav-title" style="color: #f0f0f0;">MalagaRP</span>
+     </div>
+     <div class="hidden md:flex items-center gap-8"><a href="#features" class="text-sm font-medium hover:opacity-80 transition" style="color: #ccc;">Características</a> <a href="#stats" class="text-sm font-medium hover:opacity-80 transition" style="color: #ccc;">Comunidad</a> <a href="#rules" class="text-sm font-medium hover:opacity-80 transition" style="color: #ccc;">Normas</a> <a href="#join" class="text-sm font-medium hover:opacity-80 transition" style="color: #ccc;">Discord</a>
+     </div><button class="md:hidden" id="mobile-toggle" style="color: #f0f0f0;" aria-label="Menú"> <i data-lucide="menu" style="width:24px;height:24px;"></i> </button>
     </div>
+    <div class="md:hidden hidden flex-col gap-3 pt-4 pb-2 px-2" id="mobile-menu"><a href="#features" class="text-sm py-2 px-3 rounded" style="color: #ccc;">Características</a> <a href="#stats" class="text-sm py-2 px-3 rounded" style="color: #ccc;">Comunidad</a> <a href="#rules" class="text-sm py-2 px-3 rounded" style="color: #ccc;">Normas</a> <a href="#join" class="text-sm py-2 px-3 rounded" style="color: #ccc;">Discord</a>
+    </div>
+   </nav>
+   <section class="hero-bg relative min-h-[600px] flex items-center justify-center px-4 pt-24 pb-20" style="min-height: 90%;">
+    <div class="city-silhouette"></div>
+    <div id="particles" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+    <div class="relative z-10 text-center max-w-3xl mx-auto">
+     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6" style="background: rgba(232,93,4,0.15); color: #e85d04; border: 1px solid rgba(232,93,4,0.25);"><span class="w-2 h-2 rounded-full animate-pulse" style="background: #e85d04;"></span> <span>SERVIDOR ACTIVO — FiveM</span>
+     </div>
+     <h1 class="font-heading text-5xl md:text-7xl font-bold leading-tight mb-5" id="hero-heading" style="color: #f0f0f0;">Vive tu historia<br>
+      en <span id="hero-accent" style="color: #e85d04;">Málaga</span></h1>
+     <p class="text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed" id="hero-subtitle" style="color: #999;">El servidor de roleplay más realista de habla hispana. Crea tu personaje, forja tu destino.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="glow-btn font-heading text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-lg text-white" id="cta-btn" style="background: #e85d04;"> <span class="relative z-10 flex items-center justify-center gap-2"> <i data-lucide="gamepad-2" style="width:18px;height:18px;"></i> <span id="cta-text">ÚNETE AHORA</span> </span> </button> <a href="#features" class="font-heading text-sm font-semibold tracking-wider uppercase px-8 py-4 rounded-lg border transition hover:bg-white hover:bg-opacity-5" style="color: #f0f0f0; border-color: rgba(255,255,255,0.15);"> <span class="flex items-center justify-center gap-2"> <i data-lucide="info" style="width:18px;height:18px;"></i> SABER MÁS </span> </a>
+     </div>
+    </div>
+   </section>
+   <section id="stats" class="section-darker py-16 px-4" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+     <div class="stat-item text-center p-5">
+      <div class="font-heading text-3xl md:text-4xl font-bold mb-1" style="color: #e85d04;">
+       2.4K+
+      </div>
+      <div class="text-sm" style="color: #888;">
+       Jugadores
+      </div>
+     </div>
+     <div class="stat-item text-center p-5">
+      <div class="font-heading text-3xl md:text-4xl font-bold mb-1" style="color: #e85d04;">
+       150+
+      </div>
+      <div class="text-sm" style="color: #888;">
+       Vehículos
+      </div>
+     </div>
+     <div class="stat-item text-center p-5">
+      <div class="font-heading text-3xl md:text-4xl font-bold mb-1" style="color: #e85d04;">
+       45+
+      </div>
+      <div class="text-sm" style="color: #888;">
+       Trabajos
+      </div>
+     </div>
+     <div class="stat-item text-center p-5">
+      <div class="font-heading text-3xl md:text-4xl font-bold mb-1" style="color: #e85d04;">
+       24/7
+      </div>
+      <div class="text-sm" style="color: #888;">
+       Online
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="features" class="section-dark py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+     <div class="text-center mb-14 reveal">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-3" style="color: #f0f0f0;">¿Por qué MalagaRP?</h2>
+      <p class="text-base max-w-lg mx-auto" style="color: #777;">Un servidor diseñado para ofrecer la experiencia de roleplay más inmersiva posible.</p>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="banknote" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" id="feat1-title" style="color: #f0f0f0;">Economía Real</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Sistema económico dinámico con propiedades, negocios, mercado negro y mucho más. Tu esfuerzo tiene recompensa.</p>
+      </div>
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="briefcase" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" id="feat2-title" style="color: #f0f0f0;">Trabajos Únicos</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Más de 45 trabajos legales e ilegales. Desde mecánico hasta narcotraficante, tú decides tu camino.</p>
+      </div>
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="shield" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" id="feat3-title" style="color: #f0f0f0;">Policía &amp; EMS</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Facciones organizadas con sistemas avanzados. Persecuciones, investigaciones y emergencias realistas.</p>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6 mt-6">
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="car" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" style="color: #f0f0f0;">Vehículos Custom</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Más de 150 vehículos personalizados, tuning completo y carreras ilegales por las calles de Málaga.</p>
+      </div>
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="home" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" style="color: #f0f0f0;">Propiedades</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Compra casas, apartamentos y locales comerciales. Decora y personaliza tu espacio como quieras.</p>
+      </div>
+      <div class="feature-card rounded-xl p-7 reveal" style="background: #131316;">
+       <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5" style="background: rgba(232,93,4,0.12);"><i data-lucide="users" style="width:22px;height:22px;color:#e85d04;"></i>
+       </div>
+       <h3 class="font-heading text-lg font-semibold mb-2" style="color: #f0f0f0;">Comunidad Activa</h3>
+       <p class="text-sm leading-relaxed" style="color: #888;">Staff dedicado, eventos semanales y una comunidad acogedora que te ayudará desde el primer día.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="rules" class="section-darker py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+     <div class="text-center mb-12 reveal">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-3" style="color: #f0f0f0;">Normas Básicas</h2>
+      <p class="text-base" style="color: #777;">Respeta las reglas para mantener una experiencia increíble para todos.</p>
+     </div>
+     <div class="space-y-3 reveal" id="rules-list">
+      <div class="flex items-start gap-4 p-5 rounded-xl" style="background: #131316; border: 1px solid rgba(255,255,255,0.04);">
+       <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(232,93,4,0.15);"><span class="font-heading font-bold text-sm" style="color: #e85d04;">1</span>
+       </div>
+       <div>
+        <h4 class="font-heading font-semibold mb-1" style="color: #f0f0f0;">Respeto siempre</h4>
+        <p class="text-sm" style="color: #888;">Trata a todos los jugadores con respeto. No se toleran insultos fuera de personaje.</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-xl" style="background: #131316; border: 1px solid rgba(255,255,255,0.04);">
+       <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(232,93,4,0.15);"><span class="font-heading font-bold text-sm" style="color: #e85d04;">2</span>
+       </div>
+       <div>
+        <h4 class="font-heading font-semibold mb-1" style="color: #f0f0f0;">Roleplay de calidad</h4>
+        <p class="text-sm" style="color: #888;">Mantén la coherencia de tu personaje. Evita powergaming y metagaming.</p>
+       </div>
+      </div>
+      <div class="flex items-start gap-4 p-5 rounded-xl" style="background: #131316; border: 1px solid rgba(255,255,255,0.04);">
+       <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(232,93,4,0.15);"><span class="font-heading font-bold text-sm" style="color: #e85d04;">3</span>
+       </div>
+       <div>
+        <h4 class="font-heading font-semibold mb-1" style="color: #f0f0f0;">Sin trampas</h4>
+        <p class="text-sm" style="color: #888;">Cualquier uso de hacks, mods o exploits resultará en ban permanente.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="join" class="relative py-24 px-4 text-center" style="background: linear-gradient(180deg, #0d0d0d 0%, #1a0a00 50%, #0d0d0d 100%);">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse at center, rgba(232,93,4,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+    <div class="relative z-10 max-w-2xl mx-auto reveal">
+     <h2 class="font-heading text-4xl md:text-5xl font-bold mb-5" style="color: #f0f0f0;">¿Listo para empezar?</h2>
+     <p class="text-lg mb-10" style="color: #999;">Únete a nuestra comunidad en Discord y empieza tu aventura hoy mismo.</p>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center"><button class="glow-btn font-heading text-sm font-semibold tracking-wider uppercase px-10 py-4 rounded-lg text-white" id="join-btn" style="background: #e85d04;"> <span class="relative z-10 flex items-center justify-center gap-2"> <i data-lucide="message-circle" style="width:18px;height:18px;"></i> DISCORD </span> </button> <button class="font-heading text-sm font-semibold tracking-wider uppercase px-10 py-4 rounded-lg border transition hover:bg-white hover:bg-opacity-5" style="color: #f0f0f0; border-color: rgba(255,255,255,0.15);"> <span class="flex items-center justify-center gap-2"> <i data-lucide="monitor" style="width:18px;height:18px;"></i> CONECTAR FiveM </span> </button>
+     </div>
+    </div>
+   </section>
+   <footer class="py-10 px-4" style="background: #060606; border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+     <div class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded flex items-center justify-center" style="background: #e85d04;"><span class="font-heading text-white font-bold text-sm">M</span>
+      </div><span class="font-heading text-sm font-semibold" id="footer-title" style="color: #666;">MalagaRP © 2025</span>
+     </div>
+     <div class="flex items-center gap-6"><a href="#" class="transition hover:opacity-70" style="color: #555;" aria-label="Discord"><i data-lucide="message-circle" style="width:18px;height:18px;"></i></a> <a href="#" class="transition hover:opacity-70" style="color: #555;" aria-label="Twitter"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a> <a href="#" class="transition hover:opacity-70" style="color: #555;" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px;"></i></a> <a href="#" class="transition hover:opacity-70" style="color: #555;" aria-label="YouTube"><i data-lucide="youtube" style="width:18px;height:18px;"></i></a>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+  const defaultConfig = {
+    background_color: '#0a0a0a',
+    surface_color: '#131316',
+    text_color: '#f0f0f0',
+    primary_action: '#e85d04',
+    secondary_action: '#999999',
+    font_family: 'Oswald',
+    font_size: 16,
+    site_title: 'MalagaRP',
+    hero_heading: 'Vive tu historia en Málaga',
+    hero_subtitle: 'El servidor de roleplay más realista de habla hispana. Crea tu personaje, forja tu destino.',
+    cta_text: 'ÚNETE AHORA',
+    feature1_title: 'Economía Real',
+    feature2_title: 'Trabajos Únicos',
+    feature3_title: 'Policía & EMS'
+  };
 
-    <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
+  function applyConfig(config) {
+    const c = { ...defaultConfig, ...config };
+    const font = c.font_family || defaultConfig.font_family;
+    const base = c.font_size || defaultConfig.font_size;
+
+    document.getElementById('nav-title').textContent = c.site_title;
+    const headingEl = document.getElementById('hero-heading');
+    headingEl.innerHTML = c.hero_heading.includes('Málaga')
+      ? c.hero_heading.replace('Málaga', `<span id="hero-accent" style="color:${c.primary_action}">Málaga</span>`).replace('en ', 'en<br>')
+      : c.hero_heading;
+    document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+    document.getElementById('cta-text').textContent = c.cta_text;
+    document.getElementById('feat1-title').textContent = c.feature1_title;
+    document.getElementById('feat2-title').textContent = c.feature2_title;
+    document.getElementById('feat3-title').textContent = c.feature3_title;
+    document.getElementById('footer-title').textContent = c.site_title + ' © 2025';
+
+    const pa = c.primary_action;
+    document.getElementById('logo-box').style.background = pa;
+    document.getElementById('cta-btn').style.background = pa;
+    document.getElementById('join-btn').style.background = pa;
+    document.querySelectorAll('.stat-item .font-heading').forEach(el => el.style.color = pa);
+
+    const stack = `${font}, sans-serif`;
+    document.querySelectorAll('.font-heading').forEach(el => el.style.fontFamily = stack);
+
+    headingEl.style.fontSize = `${base * 3.5}px`;
+    document.getElementById('hero-subtitle').style.fontSize = `${base * 1.15}px`;
+  }
+
+  if (window.elementSdk) {
+    window.elementSdk.init({
+      defaultConfig,
+      onConfigChange: async (config) => applyConfig(config),
+      mapToCapabilities: (config) => ({
+        recolorables: [
+          { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+          { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+          { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+          { get: () => config.primary_action || defaultConfig.primary_action, set: (v) => { config.primary_action = v; window.elementSdk.setConfig({ primary_action: v }); } },
+          { get: () => config.secondary_action || defaultConfig.secondary_action, set: (v) => { config.secondary_action = v; window.elementSdk.setConfig({ secondary_action: v }); } }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
         }
-    </script>
-</body>
+      }),
+      mapToEditPanelValues: (config) => new Map([
+        ['site_title', config.site_title || defaultConfig.site_title],
+        ['hero_heading', config.hero_heading || defaultConfig.hero_heading],
+        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+        ['cta_text', config.cta_text || defaultConfig.cta_text],
+        ['feature1_title', config.feature1_title || defaultConfig.feature1_title],
+        ['feature2_title', config.feature2_title || defaultConfig.feature2_title],
+        ['feature3_title', config.feature3_title || defaultConfig.feature3_title]
+      ])
+    });
+  }
+
+  const particlesEl = document.getElementById('particles');
+  for (let i = 0; i < 20; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = (60 + Math.random() * 40) + '%';
+    p.style.animationDuration = (4 + Math.random() * 6) + 's';
+    p.style.animationDelay = Math.random() * 5 + 's';
+    particlesEl.appendChild(p);
+  }
+
+  document.getElementById('mobile-toggle').addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('mobile-menu').classList.add('hidden');
+      document.getElementById('mobile-menu').classList.remove('flex');
+    });
+  });
+
+  lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fa8c99717c8cfc2',t:'MTc3ODU4MjI0MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
